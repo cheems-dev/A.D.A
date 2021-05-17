@@ -7,18 +7,24 @@ import { performance } from "perf_hooks";
  */
 export const bubbleSort = (array) => {
   if (Array.isArray(array)) {
+    let account = 0;
     let start = performance.now();
     for (let i = 1; i < array.length; i++) {
+      account += 8;
       for (let j = 0; j < array.length - i; j++) {
+        account += 8;
         let tmp;
         if (array[j] > array[j + 1]) {
-          tmp = array[j];
-          array[j] = array[j + 1];
-          array[j + 1] = tmp;
+          // x2
+          tmp = array[j]; // x8
+          array[j] = array[j + 1]; // x8
+          array[j + 1] = tmp; // x8
+          account += 8 * 3 + 2;
         }
       }
     }
+    // console.log(`Bubble Sort Cost: ${account}`);
     let end = performance.now();
-    return end - start;
+    return { time: +(end - start).toFixed(4), cost: account };
   }
 };

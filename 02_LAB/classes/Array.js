@@ -36,15 +36,15 @@ export default class ArrayRandom {
   setArrayRandomDesc() {
     let account = 0;
     for (let j = this.n; j >= 0; --j) {
-      account += random(this.size, false);
+      account += random(this.n, false);
       this.array[j] = account;
     }
   }
 
   setArrayRandomAsc() {
     let account = 0;
-    for (let j = 0; j < this.size; j++) {
-      account += random(this.size, false);
+    for (let j = 0; j < this.n; j++) {
+      account += random(this.n, false);
       this.array.push(account);
     }
   }
@@ -52,6 +52,9 @@ export default class ArrayRandom {
   getArrayRandom() {
     const bubbleArray = Array.from(this.array);
     const insertArray = Array.from(this.array);
-    return { bubbleArray, insertArray };
+    return {
+      bubble: bubbleArray,
+      insert: insertArray,
+    };
   }
 }

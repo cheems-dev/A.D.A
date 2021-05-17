@@ -1,0 +1,4 @@
+La ruta 1 tiene un costo optimo de 6
+La ruta 2 tiene un costo optimo de 9
+La ruta 3 tiene un costo optimo de 0
+La ruta 4 tiene un costo optimo de 10

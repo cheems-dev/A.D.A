@@ -1,7 +1,9 @@
 import fs from "fs";
 
-export default function (a, b, file) {
-  const data = fs.readFileSync(file, "utf8") ? `\n${a} \n${b}` : `${a} \n${b}`;
+export default function (file, json) {
+  const data = fs.readFileSync(file, "utf8")
+    ? `\n${JSON.stringify(json)},`
+    : `[${JSON.stringify(json)},`;
 
   try {
     fs.appendFileSync(file, data);

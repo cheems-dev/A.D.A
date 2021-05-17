@@ -1,0 +1,14 @@
+[
+  { "size": 1000, "insert": 0.2975, "bubble": 9.1376 },
+  { "size": 2000, "insert": 0.6014, "bubble": 15.4384 },
+  { "size": 3000, "insert": 0.9551, "bubble": 25.209 },
+  { "size": 4000, "insert": 1.179, "bubble": 40.4055 },
+  { "size": 5000, "insert": 1.4764, "bubble": 57.2099 },
+  { "size": 6000, "insert": 1.7617, "bubble": 80.169 },
+  { "size": 7000, "insert": 2.4453, "bubble": 107.7687 },
+  { "size": 8000, "insert": 7.5861, "bubble": 138.2911 },
+  { "size": 9000, "insert": 7.598, "bubble": 172.6185 },
+  { "size": 10000, "insert": 7.6818, "bubble": 212.5496 }
+]
+
+{"size":10000,"insert":10.0185,"bubble":251.9984},

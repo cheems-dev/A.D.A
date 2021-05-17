@@ -1,0 +1,14 @@
+[
+  { "size": 1000, "insert": 31968, "bubble": 4003992 },
+  { "size": 2000, "insert": 63968, "bubble": 16007992 },
+  { "size": 3000, "insert": 95968, "bubble": 36011992 },
+  { "size": 4000, "insert": 127968, "bubble": 64015992 },
+  { "size": 5000, "insert": 159968, "bubble": 100019992 },
+  { "size": 6000, "insert": 191968, "bubble": 144023992 },
+  { "size": 7000, "insert": 223968, "bubble": 196027992 },
+  { "size": 8000, "insert": 255968, "bubble": 256031992 },
+  { "size": 9000, "insert": 287968, "bubble": 324035992 },
+  { "size": 10000, "insert": 319968, "bubble": 400039992 }
+]
+
+{"size":10000,"insert":319968,"bubble":400039992},
