@@ -1,0 +1,14 @@
+{
+  "name": "03_2_LAB",
+  "version": "1.0.0",
+  "description": "Merge vs Intercalcion ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "type": "module",
+  "author": "Luis Ccalluchi Lopez <Daprimovaria@gmail.com>",
+  "license": "MIT"
+}

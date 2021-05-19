@@ -1,3 +1,5 @@
 01_LAB_PYTHON/*
 05_LAB/*
 /node_modules
+*.zip
+/examen
