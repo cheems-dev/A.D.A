@@ -1,29 +1,48 @@
 /**
  * Author: Luis Alberto Ccalluchi Lopez <daprimovaria@gmail.com>
  */
-// import { Max } from "./classes/Max.js";
-import { QuickSort } from "./classes/QuickSort.js";
-import { random } from "./functions/random.js";
 
-const ARRAY_SIZE = [256, 512, 1024, 2040, 4096, 8192, 10384];
+import QuickSortPivotRandom from "./classes/QuickSortPivotRandom.js";
+import generateArrayRandom from "./functions/generateArrayRandom.js";
+
+let exponent = 8;
+const ARRAY_SIZE = Array.from({ length: 13 }, () => 2 ** exponent++);
+const NUMBER_VECTOR = 200;
 
 function main() {
-  console.log("n   contador/200  n*log(n)");
+  // console.log("n,promedio,ln(n)");
+  console.log("n,promedio,n*log(n)*2");
   ARRAY_SIZE.forEach((n) => {
     let account = 0;
-    let array = [];
-    for (let i = 0; i < 200; i++) {
-      array = Array.from({ length: n }, () => random(n));
-      // account += new Max(array).get();
-      account += new QuickSort(array).get();
+    // for (let i = 0; i < NUMBER_VECTOR; i++) {
+    //   array = generateArrayRandom(n);
+    //   account += new Max(array).get();
+    // }
+    // console.log(`${n},${account / NUMBER_VECTOR},${(Math.log(n) - 0.57).toFixed(3)}`);
+    // account = 0;
+
+    // // quicksort sin pivot random
+    // for (let i = 0; i < NUMBER_VECTOR; i++) {
+    //   const array = generateArrayRandom(n);
+    //   // console.log(array);
+    //   account += new QuickSort(array).run();
+    // }
+    // console.log(
+    //   `${n},${account / NUMBER_VECTOR},${(n * Math.log10(n)).toFixed(3)}`
+    // );
+
+    // account = 0;
+    // quicksort con pivot random
+    for (let i = 0; i < NUMBER_VECTOR; i++) {
+      const array = generateArrayRandom(n);
+      account += new QuickSortPivotRandom(array).run();
     }
-    // console.log(`${n}, ${account / 200}, ${Math.log(n) -0.5}`);
-    // Probar nlog(n)  - n
     console.log(
-      `${n}, ${account / 200}, ${(n / 2.2) * Math.log(n).toFixed(2)}`
+      `${n},${account / NUMBER_VECTOR},${(n * 2 * Math.log10(n)).toFixed(2)}`
     );
   });
 }
+
 main();
 
 // Hacer lo mismo para quicksort
