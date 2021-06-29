@@ -35,13 +35,12 @@ export class QuickSortPivotRandom {
   }
 
   randomPartition(array, lower, higher) {
-    // get a random pivot index
+    // Obtener un pivote aleatorio entre el valor izquierdo al derecho
     const pivot = randomRangeNumber(lower, higher);
 
-    // swap the pivot with the last one.
+    // intercambia la posicion pivote con la posicion de la derecha
     [array[higher], array[pivot]] = [array[pivot], array[higher]];
 
-    // call the partition function
     return this.partition(array, lower, higher);
   }
 }
