@@ -1,0 +1,15 @@
+{
+  "name": "03_javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start:dev": "nodemon main.js"
+  },
+  "keywords": [],
+  "author": "Luis Alberto Ccalluchi Lopez <daprimovaria@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
