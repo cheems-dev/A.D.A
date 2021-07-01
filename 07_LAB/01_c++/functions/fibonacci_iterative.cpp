@@ -1,13 +1,15 @@
-long long int fibonacci_iterative(long long int n)
+#include <vector>
+#include <iostream>
+using namespace std;
+
+long long fibonacci_iterative(long long n)
 {
-  long long int n_2{0}, n_1{1};
+  std::vector<long long> memoization;
+  memoization.push_back(0);
+  memoization.push_back(1);
   if (n < 1)
     return 0;
-  for (long long int i = 2; i <= n; i++)
-  {
-    long long int add = n_1 + n_2;
-    n_2 = n_1;
-    n_1 = add;
-  }
-  return n_1;
+  for (long long index = 2; index <= n; index++)
+    memoization.push_back(memoization[index - 2] + memoization[index - 1]);
+  return memoization.back();
 }
