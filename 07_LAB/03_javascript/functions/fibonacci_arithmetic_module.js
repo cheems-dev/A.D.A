@@ -1,14 +1,11 @@
-function fibonacci_arithmetic_module(n, modulo) {
-  if (n == 0) return 0;
-  let anterior = 0,
-    actual = 1,
-    proximo = 0;
-  for (let i = 1; i < n; i++) {
-    proximo = ((actual % modulo) + (anterior % modulo)) % modulo;
-    anterior = actual;
-    actual = proximo;
+export default function fibonacci_arithmetic_module(fib_nth, mod) {
+  let n_1 = 1,
+    n_2 = 0;
+  if (fib_nth == 0) return 0;
+  for (let i = 1; i < fib_nth; i++) {
+    [([n_1, n_2] = [((n_1 % mod) + (n_2 % mod)) % mod, n_1])]; //hacemos un swap
   }
-  return actual;
+  return n_1;
 }
-// #print(fibonacci_arithmetic_module(256,1048576))
-console.log(fibonacci_arithmetic_module(2, 3));
+// console.log(fibonacci_arithmetic_module(2 ** 20, 2 ** 10)); // 571
+// console.log(fibonacci_arithmetic_module(2 ** 30, 2 ** 20));
