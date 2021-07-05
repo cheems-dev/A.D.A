@@ -28,7 +28,7 @@ function main_max_algorithm() {
 
 // tiempo promedio de quicksort con pivot random
 function main_quicksort_random() {
-  console.log("n,promedio,n*log(n)*2");
+  console.log("n,promedio,n*log(n)");
   ARRAY_SIZE.forEach((n) => {
     let account = 0;
     for (let i = 0; i < NUMBER_VECTOR; i++) {
@@ -36,7 +36,7 @@ function main_quicksort_random() {
       account += new QuickSortPivotRandom(array).run();
     }
     console.log(
-      `${n},${account / NUMBER_VECTOR},${(n * 2 * Math.log10(n)).toFixed(2)}`
+      `${n},${account / NUMBER_VECTOR},${(n * Math.log(n)).toFixed(2)}`
     );
   });
 }
@@ -51,11 +51,11 @@ function main_quicksort() {
       account += new QuickSort(array).run();
     }
     console.log(
-      `${n},${account / NUMBER_VECTOR},${(n * Math.log10(n)).toFixed(2)}`
+      `${n},${account / NUMBER_VECTOR},${(n * Math.log(n)).toFixed(2)}`
     );
   });
 }
 
 main_quicksort_random();
-console.log("---------------------------");
-main_quicksort();
+// console.log("---------------------------");
+// main_quicksort();

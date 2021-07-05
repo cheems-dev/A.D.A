@@ -9,6 +9,8 @@ export default class MapCoordinate {
     this.cols = _cols;
     this.array = this.init();
     this.n = 0; // fix
+    this.x = 0; // fix
+    this.y = 0; // fix
   }
 
   init() {
@@ -22,6 +24,7 @@ export default class MapCoordinate {
    * @param {number} y - coordenada en el eje y
    */
   createSquare(n, x, y) {
+    [this.x, this.y] = [x, y];
     this.n = n; // fix
     // Recordemos que para los programadores todo se cuenta desde 0
     x -= 1;
@@ -40,6 +43,22 @@ export default class MapCoordinate {
     }
     console.log(`--------`);
     console.log(`${n}: ${total} cuadrados totales`);
+  }
+
+  countSquareCoordinate() {
+    const [x, y] = [this.x - 1, this.y - 1];
+
+    console.log(this.countSquareCoordinateRecursive(x + 1, y + 1, 0));
+  }
+
+  countSquareCoordinateRecursive(x, y, i) {
+    if (i === this.n) return 0;
+    else this.array[x - 1][y - 1] = this.array[x][y] + 1;
+
+    return (
+      this.array[x - 1][y - 1] ** 2 +
+      this.countSquareCoordinateRecursive(x++, y++, i + 1)
+    );
   }
 
   print() {
