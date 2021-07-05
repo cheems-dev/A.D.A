@@ -8,6 +8,7 @@ export default class MapCoordinate {
     this.rows = _rows;
     this.cols = _cols;
     this.array = this.init();
+    this.n = 0; // fix
   }
 
   init() {
@@ -21,11 +22,24 @@ export default class MapCoordinate {
    * @param {number} y - coordenada en el eje y
    */
   createSquare(n, x, y) {
+    this.n = n; // fix
     // Recordemos que para los programadores todo se cuenta desde 0
     x -= 1;
     y -= 1;
     for (let i = 0; i < n; i++)
       for (let j = 0; j < n; j++) this.array[x + i][y + j] = 1;
+  }
+
+  // Haz bajo la manga
+  countSquare() {
+    const n = this.n; // fix
+    let total = 0;
+    for (let i = 2; i >= 0; i--) {
+      total += (n - i) ** 2;
+      console.log(`${n - i}: ${(n - i) ** 2} cuadrados`);
+    }
+    console.log(`--------`);
+    console.log(`${n}: ${total} cuadrados totales`);
   }
 
   print() {

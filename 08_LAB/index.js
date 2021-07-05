@@ -5,6 +5,7 @@ function main() {
   mapCoordinate.print();
   mapCoordinate.createSquare(3, 4, 4);
   mapCoordinate.print();
+  mapCoordinate.countSquare();
 }
 
 main();
