@@ -1,0 +1,17 @@
+{
+  "name": "uva_1112_mice_and_maze",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Luis Ccalluchi Lopez <daprimovaria@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
